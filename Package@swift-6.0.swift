@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-  name: "BridgingWebView",
+  name: "swift-bridging-webview",
   platforms: [
     .iOS(.v16),
     .macOS(.v15),
