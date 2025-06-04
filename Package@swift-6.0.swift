@@ -1,4 +1,4 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 6.0
 
 import PackageDescription
 
@@ -6,7 +6,7 @@ let package = Package(
   name: "BridgingWebView",
   platforms: [
     .iOS(.v16),
-    .macOS(.v14),
+    .macOS(.v15),
   ],
   products: [
     // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -23,5 +23,7 @@ let package = Package(
       name: "BridgingWebViewTests",
       dependencies: ["BridgingWebView"]
     ),
-  ]
+  ],
+  swiftLanguageModes: [.v6]
 )
+
