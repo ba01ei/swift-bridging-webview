@@ -35,8 +35,8 @@ struct ContentView: View {
 Handling native to web request
 
 ```typescript
-if (window["WebNativeBridge"]) {
-  window["WebNativeBridge"].nativeToWeb = (data: any) => {
+if (window.WebNativeBridge) {
+  window.WebNativeBridge.nativeToWeb = (data: any) => {
     if (data.type === "actionA") {
       console.log("received native request", data)
       return {result: "a"}
@@ -49,7 +49,7 @@ Sending request to native
 
 ```typescript
 async function sendBridgeMessage(message: { type: string; data: any }): Promise<any> {
-  return await window["WebNativeBridge"]?.webToNative?.(message);
+  return await window.WebNativeBridge?.webToNative?.(message);
 }
 
 ```
@@ -61,3 +61,5 @@ async function sendBridgeMessage(message: { type: string; data: any }): Promise<
 | bridgeName | WebNativeBridge |
 | webToNativeFunctionName | webToNative |
 | nativeToWebFunctionName | nativeToWeb |
+
+These can be changed when initializing BridgingWebView. The web setup will change accordingly if these are changed.
