@@ -9,7 +9,7 @@ struct ContentView: View {
   let webCaller = WebCaller()
   var body: some View {
     VStack {
-      WebView(url: WebURL, webCaller: webCaller) { webRequest in
+      BridgingWebView(url: WebURL, webCaller: webCaller) { webRequest in
         // handling web -> native request
         guard let webRequest = webRequest as? [String: Any] else { return }
         switch webRequest["type"] {
